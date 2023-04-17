@@ -13,5 +13,6 @@ namespace DAL
         void Create(T item);
         void Update(T item);
         void Delete(int id);
+        void Delete(string name1,string name2);
     }
 }

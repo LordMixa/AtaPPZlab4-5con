@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BLL
 {
@@ -23,7 +24,10 @@ namespace BLL
         public Ticket(){ }
         public override string ToString()
         {
-            return base.ToString();
+            return $"Name of Show = {NameShow}\n" +
+                $"Name of Owner = {NameOfOwner}\n" +
+                $"Date = {Date}\n" +
+                $"Price = {Price}\n\n";
         }
     }
 }

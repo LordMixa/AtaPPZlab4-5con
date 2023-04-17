@@ -27,7 +27,12 @@ namespace BLL
         }
         public override string ToString()
         {
-            return base.ToString();
+            return $"Name = {Name}\n" +
+                $"Author = {Author}\n" +
+                $"Genre = {Genre}\n" +
+                $"Count of Seats = {CountSeats}\n" +
+                $"Date = {Date}\n" +
+                $"Price = {Price}\n\n";
         }
     }
 }

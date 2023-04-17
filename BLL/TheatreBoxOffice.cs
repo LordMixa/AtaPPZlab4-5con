@@ -22,7 +22,7 @@ namespace BLL
         }
         public void DeleteShow(int numshow)
         {
-            shows.RemoveAt(--numshow);
+            shows.RemoveAt(numshow);
         }
         public string BuyTicket(int countshow, string nameofowner)
         {

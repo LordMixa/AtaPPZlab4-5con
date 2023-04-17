@@ -51,10 +51,18 @@ namespace BLL
             else
                 return "I'm sorry but there are no available seats for this show";
         }
-        public void DeleteShow(int numshow)
+        public string DeleteShow(string nameshow,string nameauthor)
         {
-            theatreBox.DeleteShow(numshow);
-            showService.DeleteShow(numshow);
+            for (int i = 0; i < theatreBox.shows.Count; i++)
+            {
+                if (theatreBox.shows[i].Name==nameshow&& theatreBox.shows[i].Author == nameauthor)
+                {
+                    theatreBox.DeleteShow(i);
+                    showService.DeleteShow(nameshow, nameauthor);
+                    return "Show was deleted";
+                }
+            }
+            return "This show wasn`t found";
         }
         public string DeleteTicket(string showname, string nameofowner)
         {
@@ -67,7 +75,7 @@ namespace BLL
                         return check;
                     else
                     {
-                        showService.DeleteTicket(i);
+                        showService.DeleteTicket(showname,nameofowner);
                         return check;
                     }
                 }

@@ -48,12 +48,30 @@ namespace BLL
                 unitOfWork.Save();
             }
         }
+        public void DeleteShow(string name1,string name2)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                var showRepository = new ShowRepository(unitOfWork);
+                showRepository.Delete(name1,name2);
+                unitOfWork.Save();
+            }
+        }
         public void DeleteTicket(int id)
         {
             using (var unitOfWork = new UnitOfWork())
             {
                 var ticketRepository = new TicketRepository(unitOfWork);
                 ticketRepository.Delete(id);
+                unitOfWork.Save();
+            }
+        }
+        public void DeleteTicket(string name1, string name2)
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                var ticketRepository = new TicketRepository(unitOfWork);
+                ticketRepository.Delete(name1,name2);
                 unitOfWork.Save();
             }
         }

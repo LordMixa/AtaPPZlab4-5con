@@ -17,7 +17,6 @@ namespace DAL.Repository
             _unitOfWork = unitOfWork;
             _ticketSet = _unitOfWork.Context.Set<DBTicket>();
         }
-
         public IEnumerable<DBTicket> GetAll()
         {
             return _ticketSet;
@@ -44,6 +43,13 @@ namespace DAL.Repository
             DBTicket book = _ticketSet.Find(id);
             if (book != null)
                 _ticketSet.Remove(book);
+        }
+        public void Delete(string name1, string name2)
+        {
+            var objectToDelete = _ticketSet.FirstOrDefault(x => x.NameShow == name1 && x.NameOfOwner == name2);
+
+            if (objectToDelete != null)
+                _ticketSet.Remove(objectToDelete);
         }
     }
 }

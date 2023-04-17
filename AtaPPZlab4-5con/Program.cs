@@ -55,19 +55,28 @@ namespace AtaPPZlab4_5con
             //showService.AddTicket(new Ticket("zcxzczc", 111, "Z.X.c", new DateTime(2020, 1, 31)));
             //var show = showService.GetShows();
             ProgramLogic programLogic =new ProgramLogic();
-            //Console.WriteLine(programLogic.AddTicket(3, "Garabere"));
+            Console.WriteLine(programLogic.AddTicket(1, "Garabere"));
             //Console.WriteLine(programLogic.AddTicket(3, "Dosa nosa"));
             //Console.WriteLine(programLogic.AddTicket(3, "Basosa nosa"));
-            //Console.WriteLine(programLogic.AddTicket(3, "Opa nosa"));
+            Console.WriteLine(programLogic.AddTicket(1, "Opa nosa"));
             //programLogic.AddShow("Baka", "Anime", "Anime", 5, DateTime.Today, 50);
             //programLogic.AddShow("Vaka", "HAnime", "BAnime", 3, DateTime.Today, 50);
             //Console.WriteLine(programLogic.CheckSoldTickets(1));
             //Console.WriteLine(programLogic.DeleteTicket("Vaka", "Garabere"));
-            Console.WriteLine(programLogic.DeleteTicket("Vaka", "Garabere"));
+            //Console.WriteLine(programLogic.DeleteTicket("Vaka", "Garabere"));
             //programLogic.DeleteShow(1);
-            programLogic.GetShows();
-            programLogic.GetTickets();
-            int i = 1;
+            //Console.WriteLine(programLogic.DeleteShow("Baka", "Anime"));
+            //Console.WriteLine(programLogic.DeleteShow("John Smith", "test1"));
+            //Console.WriteLine(programLogic.DeleteTicket("Vaka","Garabere"));
+            //Console.WriteLine(programLogic.DeleteTicket("Vaka", "Garabere"));
+            //Console.WriteLine(programLogic.DeleteTicket("Vaka", "Garabere"));
+            List<string> list1= programLogic.GetShows();
+            List<string> list2 = programLogic.GetTickets();
+            for (int i = 0; i < list1.Count; i++)
+                Console.WriteLine(list1[i]);
+            Console.WriteLine();
+            for (int i = 0; i < list2.Count; i++)
+                Console.WriteLine(list2[i]);
             //showService.AddShow(new Show("Avgus", "Billi Ppo", "Boo", 12, new DateTime(2025, 12, 21), 1000));
             //ShowService showService = new ShowService(new DAL.Repository.UnitOfWork());
             Console.ReadLine();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DAL.DBEntities;
 using DAL.Repository;
+//using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
@@ -30,7 +31,13 @@ namespace DAL
             if (show != null)
                 _showSet.Remove(show);
         }
+        public void Delete(string name1,string name2)
+        {
+            var objectToDelete = _showSet.FirstOrDefault(x => x.Name == name1 && x.Author == name2);
 
+            if (objectToDelete != null)
+                _showSet.Remove(objectToDelete);
+        }
         public DBShow Get(int id)
         {
             return _showSet.Find(id);
