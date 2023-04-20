@@ -2,12 +2,7 @@
 using DAL;
 using DAL.DBEntities;
 using DAL.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {

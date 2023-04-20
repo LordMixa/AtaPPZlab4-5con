@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
-using BLL;
-using DAL;
-using DAL.Repository;
-using DAL.DBEntities;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BLL
@@ -15,7 +9,7 @@ namespace BLL
     public class ProgramLogic
     {
         ShowService showService;
-        TheatreBoxOffice theatreBox;
+        public TheatreBoxOffice theatreBox;
 
         public ProgramLogic()
         {
@@ -51,31 +45,36 @@ namespace BLL
             else
                 return "I'm sorry but there are no available seats for this show";
         }
-        public string DeleteShow(string nameshow,string nameauthor)
+        public string DeleteShow(int numshow)
         {
-            for (int i = 0; i < theatreBox.shows.Count; i++)
-            {
-                if (theatreBox.shows[i].Name==nameshow&& theatreBox.shows[i].Author == nameauthor)
-                {
-                    theatreBox.DeleteShow(i);
-                    showService.DeleteShow(nameshow, nameauthor);
-                    return "Show was deleted";
-                }
-            }
-            return "This show wasn`t found";
-        }
-        public string DeleteTicket(string showname, string nameofowner)
-        {
+            string nameshow = theatreBox.shows[--numshow].Name;
+            showService.DeleteShow(theatreBox.shows[numshow].Name, theatreBox.shows[numshow].Author);
+            theatreBox.DeleteShow(numshow);
             for (int i = 0; i < theatreBox.tickets.Count; i++)
             {
-                if (theatreBox.tickets[i].NameShow == showname && theatreBox.tickets[i].NameOfOwner == nameofowner)
+                if (theatreBox.tickets[i].NameShow==nameshow)
+                    showService.DeleteTicket(theatreBox.tickets[i].NameShow, theatreBox.tickets[i].NameOfOwner);
+            }
+            for (int i = 0; i < theatreBox.tickets.Count; i++)
+            {
+                if (theatreBox.tickets[i].NameShow == nameshow)
+                    theatreBox.tickets.Remove(theatreBox.tickets[i]);
+            }
+            return "Show was deleted";
+        }
+        public string DeleteTicket(int numshow, string nameofowner)
+        {
+            --numshow;
+            for (int i = 0; i < theatreBox.tickets.Count; i++)
+            {
+                if (theatreBox.tickets[i].NameShow == theatreBox.shows[numshow].Name && theatreBox.tickets[i].NameOfOwner == nameofowner)
                 {
                     string check = theatreBox.ReturnTicket(i);
                     if (check == "Too late to return tickets")
                         return check;
                     else
                     {
-                        showService.DeleteTicket(showname,nameofowner);
+                        showService.DeleteTicket(theatreBox.shows[numshow].Name, nameofowner);
                         return check;
                     }
                 }
@@ -84,6 +83,7 @@ namespace BLL
         }
         public string CheckSoldTickets(int numshow)
         {
+            --numshow;
             int countsold = 0;
             for (int i = 0; i < theatreBox.tickets.Count; i++)
             {
@@ -94,7 +94,7 @@ namespace BLL
         }
         public List<string> GetShows()
         {
-            List<string> shows=new List<string>();
+            List<string> shows = new List<string>();
             for (int i = 0; i < theatreBox.shows.Count; i++)
                 shows.Add(theatreBox.shows[i].ToString());
             return shows;
@@ -106,6 +106,17 @@ namespace BLL
                 tickets.Add(theatreBox.tickets[i].ToString());
             return tickets;
         }
+        public List<string> GetTickets(int nameshow)
+        {
+            --nameshow;
+            List<string> tickets = new List<string>();
+            for (int i = 0; i < theatreBox.tickets.Count; i++)
+            {
+                if (theatreBox.tickets[i].NameShow == theatreBox.shows[nameshow].Name)
+                    tickets.Add(theatreBox.tickets[i].ToString());
+            }
+            return tickets;
+        }
         public bool CheckFreeSeats(int numshow)
         {
             int countsold = 0;
@@ -115,7 +126,7 @@ namespace BLL
                 if (theatreBox.tickets[i].NameShow == theatreBox.shows[numshow].Name)
                     countsold++;
             }
-            if(countsold<countseat)
+            if (countsold < countseat)
                 return true;
             else
                 return false;

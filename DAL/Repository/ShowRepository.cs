@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
 using DAL.DBEntities;
 using DAL.Repository;
-//using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {

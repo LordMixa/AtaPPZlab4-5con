@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
-    internal class CheckInfo
+    public class CheckInfo
     {
         public bool DateTryParse(string date)
         {
@@ -33,7 +29,7 @@ namespace BLL
         {
             if (int.TryParse(countshow, out int result))
             {
-                if (int.Parse(countshow) > theatreBoxOffice.shows.Count || int.Parse(countshow) < 0)
+                if (int.Parse(countshow) > theatreBoxOffice.shows.Count || int.Parse(countshow) <= 0)
                     return false;
                 else
                     return true;

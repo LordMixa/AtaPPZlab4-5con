@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
     public class TheatreBoxOffice
     {
-        public List<Show> shows = new List<Show>();
-        public List<Ticket> tickets = new List<Ticket>();
-        DateTime nowdatetime = new DateTime();
+        public List<Show> shows;
+        public List<Ticket> tickets;
+        DateTime nowdatetime;
         public TheatreBoxOffice(List<Show> lshows, List<Ticket> ltickets)
         {
             shows = lshows;
             tickets = ltickets;
+            nowdatetime = DateTime.Now;
         }
         public void AddShow(string name, string author, string genre, int countseats, DateTime dateTime, double price)
         {
