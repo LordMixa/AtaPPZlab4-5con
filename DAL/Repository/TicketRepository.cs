@@ -7,8 +7,8 @@ namespace DAL.Repository
 {
     public class TicketRepository:IRepository<DBTicket>
     {
-        private readonly UnitOfWork _unitOfWork;
-        private readonly DbSet<DBTicket> _ticketSet;
+        public readonly UnitOfWork _unitOfWork;
+        public readonly DbSet<DBTicket> _ticketSet;
         public TicketRepository(UnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

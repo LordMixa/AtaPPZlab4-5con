@@ -8,8 +8,8 @@ namespace DAL
 {
     public class ShowRepository:IRepository<DBShow>
     {
-        private readonly UnitOfWork _unitOfWork;
-        private readonly DbSet<DBShow> _showSet;
+        public readonly UnitOfWork _unitOfWork;
+        public readonly DbSet<DBShow> _showSet;
         public ShowRepository(UnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

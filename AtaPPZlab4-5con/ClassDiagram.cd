@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.Show">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AtaPPZlab4_5con.Program">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Menu">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="checkInfo" />
+      <Field Name="programLogic" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.ProgramLogic">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="theatreBox" />
+      <Field Name="showService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.UserMappingProfile">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.TheatreBoxOffice">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Field Name="shows" />
+      <Field Name="tickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BLL.ShowService">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.Ticket">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.CheckInfo">
+    <Position X="1.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.ShowContext">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Configurations.ShowConfiguration">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Configurations.TicketConfiguration">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.DBEntities.DBShow">
+    <Position X="13.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.DBEntities.DBTicket">
+    <Position X="15" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.ShowRepository">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Repository.TicketRepository">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Repository.UnitOfWork">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

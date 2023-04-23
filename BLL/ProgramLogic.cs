@@ -8,7 +8,7 @@ namespace BLL
 {
     public class ProgramLogic
     {
-        ShowService showService;
+        public ShowService showService;
         public TheatreBoxOffice theatreBox;
 
         public ProgramLogic()

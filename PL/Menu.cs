@@ -6,8 +6,8 @@ namespace PL
 {
     public class Menu
     {
-        ProgramLogic programLogic;
-        CheckInfo checkInfo;
+        public ProgramLogic programLogic;
+        public CheckInfo checkInfo;
         public void MainMenu()
         {
             programLogic = new ProgramLogic();

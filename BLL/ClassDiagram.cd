@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.Show">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQCAAAAEgAIAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Show.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ProgramLogic">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAJAwAgAAAAAAACAAAAAQQAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ProgramLogic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="theatreBox" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.ShowService">
+    <Position X="6.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAwAAAAAAAAACABAAAAQAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ShowService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.TheatreBoxOffice">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUABAAAgAAACAIAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TheatreBoxOffice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="shows" />
+      <Field Name="tickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BLL.Ticket">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAQAAAAAEAABAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.UserMappingProfile">
+    <Position X="2.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserMappingProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.CheckInfo">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAABAAAAAABBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CheckInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
